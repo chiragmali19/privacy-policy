@@ -6,14 +6,99 @@
   <title>Privacy Policy - TaskMate</title>
   <style>
     :root {
-      --primary-color: #007BFF;
-      --background-gradient-start: #f9f9f9;
-      --background-gradient-end: #e3e3e3;
-      --text-color: #333;
-      --heading-color: #222;
-      --container-background: #fff;
-      --highlight-background: #f4f4f4;
-      --shadow-color: rgba(0, 0, 0, 0.1);
+      /* Color System */
+      --primary-light: #4285F4;
+      --primary-dark: #8AB4F8;
+      --secondary-light: #34A853;
+      --secondary-dark: #81C995;
+      --accent-light: #FBBC05;
+      --accent-dark: #FDD663;
+      --danger-light: #EA4335;
+      --danger-dark: #F28B82;
+      
+      /* Neutrals */
+      --neutral-50: #F8F9FA;
+      --neutral-100: #F1F3F4;
+      --neutral-200: #E8EAED;
+      --neutral-300: #DADCE0;
+      --neutral-400: #BDC1C6;
+      --neutral-500: #9AA0A6;
+      --neutral-600: #80868B;
+      --neutral-700: #5F6368;
+      --neutral-800: #3C4043;
+      --neutral-900: #202124;
+      
+      /* Theme Colors */
+      --primary-color: var(--primary-light);
+      --secondary-color: var(--secondary-light);
+      --accent-color: var(--accent-light);
+      --danger-color: var(--danger-light);
+      --background-color: var(--neutral-50);
+      --card-background: #FFFFFF;
+      --text-color: var(--neutral-900);
+      --text-secondary: var(--neutral-700);
+      --border-color: var(--neutral-300);
+      --shadow-color: rgba(60, 64, 67, 0.15);
+      
+      /* Accent color with alpha */
+      --accent-color-rgb: 251, 188, 5;
+
+      /* Typography */
+      --font-heading: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
+      
+      /* Spacing System */
+      --spacing-xxs: 2px;
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+      --spacing-xxl: 48px;
+      
+      /* Border Radius */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      
+      /* Font Weights */
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-bold: 700;
+      
+      /* Animations */
+      --transition-fast: all 0.15s ease;
+      --transition-default: all 0.25s ease;
+      --transition-slow: all 0.4s ease;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(60, 64, 67, 0.1);
+      --shadow-md: 0 4px 8px rgba(60, 64, 67, 0.12);
+      --shadow-lg: 0 8px 24px rgba(60, 64, 67, 0.14);
+      --shadow-focus: 0 0 0 3px rgba(66, 133, 244, 0.25);
+    }
+
+    [data-theme="dark"] {
+      /* Theme Colors - Dark Mode */
+      --primary-color: var(--primary-dark);
+      --secondary-color: var(--secondary-dark);
+      --accent-color: var(--accent-dark);
+      --danger-color: var(--danger-dark);
+      --background-color: var(--neutral-900);
+      --card-background: var(--neutral-800);
+      --text-color: var(--neutral-200);
+      --text-secondary: var(--neutral-500);
+      --border-color: var(--neutral-700);
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      
+      /* Shadows - Dark Mode */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-focus: 0 0 0 3px rgba(138, 180, 248, 0.3);
     }
 
     * {
@@ -28,210 +113,759 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+      font-family: var(--font-body);
+      background-color: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
-      padding: 10px;
+      padding: var(--spacing-md);
       margin: 0;
+      transition: var(--transition-default);
     }
 
     .container {
-      max-width: 800px;
+      max-width: 850px;
       width: 100%;
-      margin: 20px auto;
-      background: var(--container-background);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px var(--shadow-color);
+      margin: var(--spacing-xl) auto;
+      background: var(--card-background);
+      padding: 0;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: var(--transition-default);
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, color-mix(in srgb, var(--primary-color) 70%, var(--secondary-color)) 100%);
+      color: white;
+      padding: var(--spacing-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header:before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      transform: rotate(30deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--spacing-lg);
+      background-color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      color: var(--primary-color);
+      transition: var(--transition-default);
     }
 
     h1 {
-      color: var(--heading-color);
-      font-size: 2rem;
-      margin-bottom: 15px;
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      margin-bottom: var(--spacing-sm);
+      font-weight: var(--font-weight-bold);
       line-height: 1.2;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-family: var(--font-heading);
+      font-weight: var(--font-weight-medium);
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .updated-date {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: var(--font-weight-medium);
+      margin-top: var(--spacing-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .content {
+      padding: var(--spacing-xl);
+    }
+
+    .introduction {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: var(--spacing-xl);
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--spacing-lg);
     }
 
     h2 {
-      color: var(--heading-color);
-      margin-top: 25px;
-      font-size: 1.4rem;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      color: var(--text-color);
+      font-family: var(--font-heading);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-medium);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    h2 .section-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--primary-color);
     }
 
     p {
-      margin-bottom: 15px;
+      margin-bottom: var(--spacing-md);
     }
 
     ul {
-      padding-left: 25px;
-      margin-bottom: 15px;
+      padding-left: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+    }
+
+    li {
+      margin-bottom: var(--spacing-sm);
+      position: relative;
+    }
+
+    li::marker {
+      color: var(--primary-color);
+    }
+
+    li strong {
+      color: var(--primary-color);
+      font-weight: var(--font-weight-medium);
     }
 
     ul ul {
-      margin-top: 5px;
-      margin-bottom: 5px;
+      margin-top: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
     }
 
     a {
       color: var(--primary-color);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: var(--transition-default);
     }
 
     a:hover {
       text-decoration: underline;
     }
 
+    .section {
+      margin-bottom: var(--spacing-xl);
+      animation: fadeIn 0.6s ease-out;
+    }
+
     .highlight {
-      background-color: var(--highlight-background);
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-md) 0;
       border-left: 4px solid var(--primary-color);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-default);
+    }
+
+    .highlight:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .highlight strong {
+      color: var(--primary-color);
+    }
+
+    .coming-soon {
+      background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.08) 0%, rgba(var(--accent-color-rgb), 0.15) 100%);
+      border-left: 4px solid var(--accent-color);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-md) 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-default);
+    }
+
+    .coming-soon:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .coming-soon:after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      transform: rotate(30deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 0.7rem;
+      font-weight: var(--font-weight-bold);
+      padding: 3px var(--spacing-sm);
+      border-radius: var(--radius-sm);
+      margin-left: var(--spacing-sm);
+      text-transform: uppercase;
+      vertical-align: middle;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .table-of-contents {
+      background-color: var(--card-background);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+      position: sticky;
+      top: var(--spacing-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .table-of-contents h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .table-of-contents ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .table-of-contents li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .table-of-contents a {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-fast);
+    }
+
+    .table-of-contents a:hover {
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      text-decoration: none;
+    }
+
+    .table-of-contents a .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: var(--font-weight-bold);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: var(--spacing-xxl);
+      padding: var(--spacing-xl);
+      background-color: var(--neutral-100);
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      transition: var(--transition-default);
+    }
+
+    [data-theme="dark"] .footer {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-logo {
+      width: 32px;
+      height: 32px;
+      margin-bottom: var(--spacing-sm);
+      color: var(--primary-color);
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      background-color: var(--primary-color);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-full);
+      font-weight: var(--font-weight-medium);
+      margin-top: var(--spacing-md);
+      transition: var(--transition-default);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .contact-button:hover {
+      background-color: var(--primary-color);
+      opacity: 0.9;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Controls */
+    .controls {
+      position: fixed;
+      top: var(--spacing-md);
+      right: var(--spacing-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      z-index: 100;
+    }
+
+    .control-button {
+      background-color: var(--card-background);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-default);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .control-button:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .control-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .coming-soon-badge {
+      animation: pulse 2s infinite;
     }
 
     /* Responsive Adjustments */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 768px) {
+      :root {
+        --spacing-xl: 24px;
+        --spacing-lg: 16px;
+      }
+
       body {
-        padding: 5px;
+        padding: var(--spacing-sm);
       }
 
       .container {
-        margin: 10px auto;
-        padding: 15px;
-        border-radius: 8px;
+        margin: var(--spacing-md) auto;
+        border-radius: var(--radius-md);
       }
 
       h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
 
-      ul {
-        padding-left: 20px;
+      .controls {
+        top: auto;
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
       }
 
-      .highlight {
-        padding: 10px;
-        margin: 10px 0;
+      .logo-container {
+        width: 60px;
+        height: 60px;
+      }
+
+      .logo {
+        width: 32px;
+        height: 32px;
       }
     }
 
-    /* Prevent text scaling */
-    @media screen and (max-width: 320px) {
+    /* Print styles */
+    @media print {
       body {
-        text-size-adjust: none;
-        -webkit-text-size-adjust: none;
-      }
-    }
-
-    /* Ensure accessibility and readability */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text-color: #f0f0f0;
-        --heading-color: #ffffff;
-        --container-background: #2c2c2c;
-        --highlight-background: #3c3c3c;
-        --background-gradient-start: #1c1c1c;
-        --background-gradient-end: #2a2a2a;
-      }
-
-      body {
-        background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
-        color: var(--text-color);
+        background-color: white;
+        color: black;
       }
 
       .container {
-        background: var(--container-background);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .controls,
+      .highlight:hover,
+      .coming-soon:hover {
+        display: none;
+        transform: none;
+        box-shadow: none;
       }
     }
   </style>
 </head>
 <body>
+  <div class="controls">
+    <button class="control-button" id="theme-toggle" aria-label="Toggle dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <button class="control-button" id="scroll-top" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+
   <div class="container">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: <strong>April 15, 2025</strong></p>
-
-    <p>Welcome to TaskMate, an offline-first productivity app designed to protect your personal information and provide a secure task management experience.</p>
-
-    <h2>1. Data Storage and Ownership</h2>
-    <ul>
-      <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device using SQLite database.</li>
-      <li><strong>Complete Control:</strong> You have full control over your data, with options to export, backup, and delete at any time.</li>
-    </ul>
-
-    <h2>2. Data Collection and Usage</h2>
-    <ul>
-      <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app.</li>
-      <li><strong>Types of Data:</strong>
-        <ul>
-          <li>Tasks and their details</li>
-          <li>Events and calendar entries</li>
-          <li>Categories and task classifications</li>
-          <li>App preferences and settings</li>
-        </ul>
-      </li>
-    </ul>
-
-    <h2>3. Optional Features and Permissions</h2>
-    <p>The app may request the following permissions:</p>
-    <ul>
-      <li><strong>Notifications:</strong> To send task and event reminders</li>
-      <li><strong>Calendar Sync:</strong> Optional system calendar event import (read-only)</li>
-      <li><strong>Storage:</strong> For backup and restore functionality</li>
-    </ul>
-
-    <div class="highlight">
-      <strong>Important:</strong> All permissions are optional and can be disabled at any time. No permissions are required for core app functionality.
+    <div class="header">
+      <div class="logo-container">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <h1>Privacy Policy</h1>
+      <div class="header-subtitle">Smart TaskMate: Your Privacy-Focused Task Manager</div>
+      <div class="updated-date">Last updated: April 15, 2025</div>
     </div>
 
-    <h2>4. Google Sign-In and Cloud Sync</h2>
-    <ul>
-      <li><strong>Google Authentication:</strong> We use Google Sign-In for secure cloud sync functionality</li>
-      <li><strong>Account Information:</strong> When you enable cloud sync, we store your Google account email to identify your data</li>
-      <li><strong>Data Syncing:</strong> Your tasks, events, and categories are securely synced to Firebase when this feature is enabled</li>
-      <li><strong>Encryption:</strong> All data is transmitted using secure connections</li>
-      <li><strong>Optional Feature:</strong> Cloud sync is entirely optional and can be disabled at any time</li>
-    </ul>
+    <div class="content">
+      <p class="introduction">Welcome to TaskMate, an offline-first productivity app designed to protect your personal information and provide a secure task management experience. At TaskMate, we believe in transparency and your right to privacy. This policy explains how we handle your data.</p>
 
-    <h2>5. Third-Party Integrations</h2>
-    <ul>
-      <li><strong>Google Sign-In:</strong> Used for authentication with your Google account (optional)</li>
-      <li><strong>Firebase:</strong> Google's cloud platform used for data synchronization (optional)</li>
-      <li><strong>System Calendar:</strong> Read-only access to your device's calendar (optional)</li>
-      <li><strong>No Data Selling:</strong> We do not sell your data to any third parties</li>
-    </ul>
+      <div class="table-of-contents">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Contents
+        </h3>
+        <ul>
+          <li><a href="#storage"><span class="section-number">1</span> Data Storage and Ownership</a></li>
+          <li><a href="#collection"><span class="section-number">2</span> Data Collection and Usage</a></li>
+          <li><a href="#permissions"><span class="section-number">3</span> Optional Features and Permissions</a></li>
+          <li><a href="#cloud"><span class="section-number">4</span> Cloud Sync</a></li>
+          <li><a href="#integrations"><span class="section-number">5</span> Third-Party Integrations</a></li>
+          <li><a href="#security"><span class="section-number">6</span> Data Security</a></li>
+          <li><a href="#controls"><span class="section-number">7</span> User Controls</a></li>
+          <li><a href="#children"><span class="section-number">8</span> Children's Privacy</a></li>
+          <li><a href="#changes"><span class="section-number">9</span> Changes to Privacy Policy</a></li>
+          <li><a href="#contact"><span class="section-number">10</span> Contact Us</a></li>
+        </ul>
+      </div>
 
-    <h2>6. Data Security</h2>
-    <ul>
-      <li>Local SQLite database with secure storage</li>
-      <li>Secure cloud synchronization using Firebase</li>
-      <li>No internet connection required for core functionality</li>
-    </ul>
+      <div id="storage" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+          1. Data Storage and Ownership
+        </h2>
+        <ul>
+          <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device using SQLite database.</li>
+          <li><strong>Complete Control:</strong> You have full control over your data, with options to export, backup, and delete at any time.</li>
+          <li><strong>Your Data Belongs to You:</strong> We design our app with the philosophy that your data is yours alone. We don't claim ownership over any content you create.</li>
+        </ul>
+      </div>
 
-    <h2>7. User Controls</h2>
-    <ul>
-      <li>Sign in or out of Google account at any time</li>
-      <li>Export and import data at any time</li>
-      <li>Delete all data with a single tap</li>
-      <li>Disable cloud sync features</li>
-    </ul>
+      <div id="collection" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          2. Data Collection and Usage
+        </h2>
+        <ul>
+          <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app.</li>
+          <li><strong>Types of Data:</strong>
+            <ul>
+              <li>Tasks and their details</li>
+              <li>Events and calendar entries</li>
+              <li>Categories and task classifications</li>
+              <li>App preferences and settings</li>
+            </ul>
+          </li>
+          <li><strong>Usage Analytics:</strong> Basic, anonymous usage statistics may be collected to improve the app experience. This can be disabled in settings.</li>
+        </ul>
+      </div>
 
-    <h2>8. Children's Privacy</h2>
-    <p>TaskMate is not intended for children under 13. We do not knowingly collect personal information from children.</p>
+      <div id="permissions" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          3. Optional Features and Permissions
+        </h2>
+        <p>The app may request the following permissions:</p>
+        <ul>
+          <li><strong>Notifications:</strong> To send task and event reminders</li>
+          <li><strong>Calendar Sync:</strong> Optional system calendar event import (read-only)</li>
+          <li><strong>Storage:</strong> For backup and restore functionality</li>
+        </ul>
 
-    <h2>9. Changes to Privacy Policy</h2>
-    <p>We may update this policy periodically. The latest version will always be available within the app.</p>
+        <div class="highlight">
+          <strong>Important:</strong> All permissions are optional and can be disabled at any time. No permissions are required for core app functionality.
+        </div>
+      </div>
 
-    <h2>10. Contact Us</h2>
-    <p>For any privacy-related questions, please contact us at: <a href="mailto:ck.futuretech@gmail.com">ck.futuretech@gmail.com</a></p>
+      <div id="cloud" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+          </svg>
+          4. Cloud Sync <span class="coming-soon-badge">Coming Soon</span>
+        </h2>
+        <div class="coming-soon">
+          <p><strong>We're excited to announce that cloud sync is coming soon to TaskMate!</strong></p>
+          <p>When this feature becomes available, you'll be able to:</p>
+          <ul>
+            <li>Securely sync your tasks across multiple devices</li>
+            <li>Back up your data to the cloud</li>
+            <li>Access your tasks from anywhere</li>
+          </ul>
+          <p>All cloud features will be <strong>completely optional</strong> and will follow our strict privacy-first approach.</p>
+        </div>
+        <ul>
+          <li><strong>Authentication:</strong> We'll use secure authentication methods to protect your data</li>
+          <li><strong>Encryption:</strong> All synced data will be encrypted in transit and at rest</li>
+          <li><strong>User Control:</strong> You'll have complete control over what data is synced and when</li>
+          <li><strong>Transparency:</strong> We'll provide clear information about data storage and handling</li>
+        </ul>
+      </div>
+
+      <div id="integrations" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          5. Third-Party Integrations
+        </h2>
+        <ul>
+          <li><strong>System Calendar:</strong> Read-only access to your device's calendar (optional)</li>
+          <li><strong>Future Integrations:</strong> Any future third-party integrations will be clearly documented and optional</li>
+          <li><strong>No Data Selling:</strong> We do not sell your data to any third parties</li>
+          <li><strong>Limited Sharing:</strong> We don't share your information with third parties except when explicitly required to provide requested functionality</li>
+        </ul>
+      </div>
+
+      <div id="security" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          6. Data Security
+        </h2>
+        <ul>
+          <li><strong>Local Storage:</strong> Local SQLite database with secure storage</li>
+          <li><strong>Best Practices:</strong> We follow industry best practices for data security</li>
+          <li><strong>Offline First:</strong> No internet connection required for core functionality</li>
+          <li><strong>Data Encryption:</strong> Application data is stored with encryption on your device</li>
+        </ul>
+      </div>
+
+      <div id="controls" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          7. User Controls
+        </h2>
+        <ul>
+          <li><strong>Data Export:</strong> Export and import data at any time in standard formats</li>
+          <li><strong>Data Deletion:</strong> Delete all data with a single tap</li>
+          <li><strong>Preferences:</strong> Customize your privacy settings within the app</li>
+          <li><strong>Granular Control:</strong> Choose what data to backup, share, or delete</li>
+        </ul>
+
+        <div class="highlight">
+          <strong>Privacy First:</strong> TaskMate is built with a privacy-first approach. All features that could potentially impact your privacy are disabled by default and require your explicit opt-in.
+        </div>
+      </div>
+
+      <div id="children" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          8. Children's Privacy
+        </h2>
+        <p>TaskMate is not intended for children under 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe we may have collected information about a child, please contact us immediately.</p>
+      </div>
+
+      <div id="changes" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2v6h-6"></path>
+            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+            <path d="M3 22v-6h6"></path>
+            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+          </svg>
+          9. Changes to Privacy Policy
+        </h2>
+        <p>We may update this policy periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. The latest version will always be available within the app, and significant changes will be notified to you.</p>
+      </div>
+
+      <div id="contact" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          10. Contact Us
+        </h2>
+        <p>For any privacy-related questions or concerns, please contact us at:</p>
+        <a href="mailto:ck.futuretech@gmail.com" class="contact-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          ck.futuretech@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <p>&copy; 2025 TaskMate. All rights reserved.</p>
+      <p>Made with focus on privacy and productivity</p>
+    </div>
   </div>
+
+  <script>
+    // Theme toggle functionality without using localStorage
+    const themeToggle = document.getElementById('theme-toggle');
+    const scrollTopButton = document.getElementById('scroll-top');
+    
+    // Use media query to determine default theme
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const defaultTheme = prefersDarkMode ? 'dark' : 'light';
+    
+    // Apply the default theme
+    document.documentElement.setAttribute('data-theme', defaultTheme);
+    
+    // Add click event for theme toggle
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+    });
+
+    // Scroll to top functionality
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
