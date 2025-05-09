@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,7 +16,7 @@
       --accent-dark: #FDD663;
       --danger-light: #EA4335;
       --danger-dark: #F28B82;
-      
+
       /* Neutrals */
       --neutral-50: #F8F9FA;
       --neutral-100: #F1F3F4;
@@ -27,7 +28,7 @@
       --neutral-700: #5F6368;
       --neutral-800: #3C4043;
       --neutral-900: #202124;
-      
+
       /* Theme Colors */
       --primary-color: var(--primary-light);
       --secondary-color: var(--secondary-light);
@@ -39,15 +40,16 @@
       --text-secondary: var(--neutral-700);
       --border-color: var(--neutral-300);
       --shadow-color: rgba(60, 64, 67, 0.15);
-      
+
       /* Accent color with alpha */
       --accent-color-rgb: 251, 188, 5;
+      --danger-color-rgb: 234, 67, 53;
 
       /* Typography */
       --font-heading: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
-      
+
       /* Spacing System */
       --spacing-xxs: 2px;
       --spacing-xs: 4px;
@@ -56,24 +58,24 @@
       --spacing-lg: 24px;
       --spacing-xl: 32px;
       --spacing-xxl: 48px;
-      
+
       /* Border Radius */
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
       --radius-xl: 24px;
       --radius-full: 9999px;
-      
+
       /* Font Weights */
       --font-weight-normal: 400;
       --font-weight-medium: 500;
       --font-weight-bold: 700;
-      
+
       /* Animations */
       --transition-fast: all 0.15s ease;
       --transition-default: all 0.25s ease;
       --transition-slow: all 0.4s ease;
-      
+
       /* Shadows */
       --shadow-sm: 0 1px 2px rgba(60, 64, 67, 0.1);
       --shadow-md: 0 4px 8px rgba(60, 64, 67, 0.12);
@@ -93,7 +95,7 @@
       --text-secondary: var(--neutral-500);
       --border-color: var(--neutral-700);
       --shadow-color: rgba(0, 0, 0, 0.3);
-      
+
       /* Shadows - Dark Mode */
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
       --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -150,7 +152,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
       transform: rotate(30deg);
       z-index: 1;
       pointer-events: none;
@@ -302,6 +304,25 @@
       color: var(--primary-color);
     }
 
+    .warning {
+      background-color: rgba(var(--danger-color-rgb), 0.05);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-md) 0;
+      border-left: 4px solid var(--danger-color);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-default);
+    }
+
+    .warning:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .warning strong {
+      color: var(--danger-color);
+    }
+
     .coming-soon {
       background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.08) 0%, rgba(var(--accent-color-rgb), 0.15) 100%);
       border-left: 4px solid var(--accent-color);
@@ -326,7 +347,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
       transform: rotate(30deg);
       z-index: 1;
       pointer-events: none;
@@ -495,6 +516,7 @@
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -505,9 +527,11 @@
       0% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.05);
       }
+
       100% {
         transform: scale(1);
       }
@@ -515,6 +539,35 @@
 
     .coming-soon-badge {
       animation: pulse 2s infinite;
+    }
+
+    /* Table */
+    .permission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-md) 0;
+      font-size: 0.9rem;
+    }
+
+    .permission-table th,
+    .permission-table td {
+      padding: var(--spacing-md);
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .permission-table th {
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      font-weight: var(--font-weight-medium);
+      color: var(--primary-color);
+    }
+
+    .permission-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .permission-table tr:hover td {
+      background-color: rgba(var(--primary-color-rgb), 0.02);
     }
 
     /* Responsive Adjustments */
@@ -556,6 +609,12 @@
         width: 32px;
         height: 32px;
       }
+
+      .permission-table th,
+      .permission-table td {
+        padding: var(--spacing-sm);
+        font-size: 0.8rem;
+      }
     }
 
     /* Print styles */
@@ -581,15 +640,18 @@
     }
   </style>
 </head>
+
 <body>
   <div class="controls">
     <button class="control-button" id="theme-toggle" aria-label="Toggle dark mode">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
     </button>
     <button class="control-button" id="scroll-top" aria-label="Scroll to top">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
@@ -598,21 +660,25 @@
   <div class="container">
     <div class="header">
       <div class="logo-container">
-        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
       </div>
       <h1>Privacy Policy</h1>
       <div class="header-subtitle">Smart TaskMate: Your Privacy-Focused Task Manager</div>
-      <div class="updated-date">Last updated: May 3, 2025</div>
+      <div class="updated-date">Last updated: May 9, 2025</div>
     </div>
 
     <div class="content">
-      <p class="introduction">Welcome to TaskMate, an offline-first productivity app designed to protect your personal information and provide a secure task management experience. At TaskMate, we believe in transparency and your right to privacy. This policy explains how we handle your data.</p>
+      <p class="introduction">Welcome to TaskMate, an offline-first productivity app designed to protect your personal
+        information and provide a secure task management experience. At TaskMate, we believe in transparency and your
+        right to privacy. This policy explains how we handle your data and details all permissions used by the app.</p>
 
       <div class="table-of-contents">
         <h3>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="8" y1="6" x2="21" y2="6"></line>
             <line x1="8" y1="12" x2="21" y2="12"></line>
             <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -625,20 +691,22 @@
         <ul>
           <li><a href="#storage"><span class="section-number">1</span> Data Storage and Ownership</a></li>
           <li><a href="#collection"><span class="section-number">2</span> Data Collection and Usage</a></li>
-          <li><a href="#permissions"><span class="section-number">3</span> Optional Features and Permissions</a></li>
-          <li><a href="#cloud"><span class="section-number">4</span> Cloud Sync</a></li>
-          <li><a href="#integrations"><span class="section-number">5</span> Third-Party Integrations</a></li>
-          <li><a href="#security"><span class="section-number">6</span> Data Security</a></li>
-          <li><a href="#controls"><span class="section-number">7</span> User Controls</a></li>
-          <li><a href="#children"><span class="section-number">8</span> Children's Privacy</a></li>
-          <li><a href="#changes"><span class="section-number">9</span> Changes to Privacy Policy</a></li>
-          <li><a href="#contact"><span class="section-number">10</span> Contact Us</a></li>
+          <li><a href="#permissions"><span class="section-number">3</span> App Permissions</a></li>
+          <li><a href="#foreground"><span class="section-number">4</span> Foreground Services</a></li>
+          <li><a href="#cloud"><span class="section-number">5</span> Cloud Sync</a></li>
+          <li><a href="#integrations"><span class="section-number">6</span> Third-Party Integrations</a></li>
+          <li><a href="#security"><span class="section-number">7</span> Data Security</a></li>
+          <li><a href="#controls"><span class="section-number">8</span> User Controls</a></li>
+          <li><a href="#children"><span class="section-number">9</span> Children's Privacy</a></li>
+          <li><a href="#changes"><span class="section-number">10</span> Changes to Privacy Policy</a></li>
+          <li><a href="#contact"><span class="section-number">11</span> Contact Us</a></li>
         </ul>
       </div>
 
       <div id="storage" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
             <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
             <line x1="6" y1="6" x2="6.01" y2="6"></line>
@@ -647,21 +715,26 @@
           1. Data Storage and Ownership
         </h2>
         <ul>
-          <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device using SQLite database.</li>
-          <li><strong>Complete Control:</strong> You have full control over your data, with options to export, backup, and delete at any time.</li>
-          <li><strong>Your Data Belongs to You:</strong> We design our app with the philosophy that your data is yours alone. We don't claim ownership over any content you create.</li>
+          <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device
+            using SQLite database.</li>
+          <li><strong>Complete Control:</strong> You have full control over your data, with options to export, backup,
+            and delete at any time.</li>
+          <li><strong>Your Data Belongs to You:</strong> We design our app with the philosophy that your data is yours
+            alone. We don't claim ownership over any content you create.</li>
         </ul>
       </div>
 
       <div id="collection" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
           </svg>
           2. Data Collection and Usage
         </h2>
         <ul>
-          <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app.</li>
+          <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app.
+          </li>
           <li><strong>Types of Data:</strong>
             <ul>
               <li>Tasks and their details</li>
@@ -670,35 +743,136 @@
               <li>App preferences and settings</li>
             </ul>
           </li>
-          <li><strong>Usage Analytics:</strong> Basic, anonymous usage statistics may be collected to improve the app experience. This can be disabled in settings.</li>
+          <li><strong>Usage Analytics:</strong> Basic, anonymous usage statistics may be collected to improve the app
+            experience. This can be disabled in settings.</li>
         </ul>
       </div>
 
       <div id="permissions" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
-          3. Optional Features and Permissions
+          3. App Permissions
         </h2>
-        <p>The app may request the following permissions:</p>
-        <ul>
-          <li><strong>Notifications:</strong> To send task and event reminders</li>
-          <li><strong>Calendar Sync:</strong> Optional system calendar event import (read-only)</li>
-          <li><strong>Storage:</strong> For backup and restore functionality</li>
-        </ul>
+        <p>TaskMate requires certain permissions to deliver its full functionality. All permissions are requested only
+          when needed and can be managed in your device settings at any time.</p>
+
+        <table class="permission-table">
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+            <th>Optional?</th>
+          </tr>
+          <tr>
+            <td><strong>INTERNET</strong></td>
+            <td>Required for cloud sync functionality and receiving remote notifications</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td><strong>VIBRATE</strong></td>
+            <td>Used for haptic feedback with notifications and reminders</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>RECEIVE_BOOT_COMPLETED</strong></td>
+            <td>Allows the app to restart scheduled notifications after device reboot</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>POST_NOTIFICATIONS</strong></td>
+            <td>Enables task reminders and notifications</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>SCHEDULE_EXACT_ALARM</strong></td>
+            <td>Required for precise task deadline notifications</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>USE_EXACT_ALARM</strong></td>
+            <td>Required for time-sensitive notifications</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>FOREGROUND_SERVICE</strong></td>
+            <td>Allows the app to run reliable task reminder services</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong></td>
+            <td>Ensures notifications work reliably even with battery optimization</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>ACCESS_NOTIFICATION_POLICY</strong></td>
+            <td>Enables urgent notifications for important tasks</td>
+            <td>Optional</td>
+
+
+          </tr>
+          <tr>
+            <td><strong>WAKE_LOCK</strong></td>
+            <td>Allows the app to keep device awake when processing important notifications</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>READ_CALENDAR</strong></td>
+            <td>Allows importing events from your device calendar (read-only)</td>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <td><strong>WRITE_CALENDAR</strong></td>
+            <td>Allows creating task-related events in your device calendar</td>
+            <td>Optional</td>
+          </tr>
+        </table>
 
         <div class="highlight">
-          <strong>Important:</strong> All permissions are optional and can be disabled at any time. No permissions are required for core app functionality.
+          <strong>Important:</strong> Most permissions are optional and can be disabled at any time. Core app
+          functionality works without these permissions, though certain features may be limited.
         </div>
+      </div>
+
+      <div id="foreground" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          4. Foreground Services
+        </h2>
+        <p>TaskMate uses foreground services to ensure reliable task reminders and notifications. Here's how and why we
+          use this functionality:</p>
+
+        <ul>
+          <li><strong>Scheduling Time-Sensitive Reminders:</strong> Our app uses foreground services to deliver
+            precisely timed notifications for your important tasks and deadlines.</li>
+          <li><strong>Background Operation:</strong> The foreground service ensures that your scheduled reminders will
+            trigger even when the app is not actively in use.</li>
+          <li><strong>Battery Optimization:</strong> We've designed our foreground service to be as battery-efficient as
+            possible while maintaining reliability.</li>
+        </ul>
+
+        <div class="warning">
+          <strong>User Consent Required:</strong> When you enable notifications in TaskMate, you'll be asked to grant
+          permission for the foreground service. This is required by Android for all apps that need to perform reliable
+          background operations.
+        </div>
+
+        <p>We only use foreground services when absolutely necessary for delivering time-sensitive task reminders that
+          you've specifically requested. You can disable this functionality at any time in the app settings.</p>
       </div>
 
       <div id="cloud" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
           </svg>
-          4. Cloud Sync <span class="coming-soon-badge">Coming Soon</span>
+          5. Cloud Sync <span class="coming-soon-badge">Coming Soon</span>
         </h2>
         <div class="coming-soon">
           <p><strong>We're excited to announce that cloud sync is coming soon to TaskMate!</strong></p>
@@ -708,7 +882,8 @@
             <li>Back up your data to the cloud</li>
             <li>Access your tasks from anywhere</li>
           </ul>
-          <p>All cloud features will be <strong>completely optional</strong> and will follow our strict privacy-first approach.</p>
+          <p>All cloud features will be <strong>completely optional</strong> and will follow our strict privacy-first
+            approach.</p>
         </div>
         <ul>
           <li><strong>Authentication:</strong> We'll use secure authentication methods to protect your data</li>
@@ -720,27 +895,32 @@
 
       <div id="integrations" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
           </svg>
-          5. Third-Party Integrations
+          6. Third-Party Integrations
         </h2>
         <ul>
           <li><strong>System Calendar:</strong> Read-only access to your device's calendar (optional)</li>
-          <li><strong>Future Integrations:</strong> Any future third-party integrations will be clearly documented and optional</li>
+          <li><strong>Firebase Services:</strong> We use Firebase for cloud messaging and notifications</li>
+          <li><strong>Future Integrations:</strong> Any future third-party integrations will be clearly documented and
+            optional</li>
           <li><strong>No Data Selling:</strong> We do not sell your data to any third parties</li>
-          <li><strong>Limited Sharing:</strong> We don't share your information with third parties except when explicitly required to provide requested functionality</li>
+          <li><strong>Limited Sharing:</strong> We don't share your information with third parties except when
+            explicitly required to provide requested functionality</li>
         </ul>
       </div>
 
       <div id="security" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
-          6. Data Security
+          7. Data Security
         </h2>
         <ul>
           <li><strong>Local Storage:</strong> Local SQLite database with secure storage</li>
@@ -752,59 +932,73 @@
 
       <div id="controls" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
           </svg>
-          7. User Controls
+          8. User Controls
         </h2>
         <ul>
+          <li><strong>Permission Management:</strong> All permissions can be managed through your device settings</li>
+          <li><strong>In-App Settings:</strong> Detailed controls for notifications, reminders, and background services
+          </li>
           <li><strong>Data Export:</strong> Export and import data at any time in standard formats</li>
           <li><strong>Data Deletion:</strong> Delete all data with a single tap</li>
-          <li><strong>Preferences:</strong> Customize your privacy settings within the app</li>
           <li><strong>Granular Control:</strong> Choose what data to backup, share, or delete</li>
         </ul>
 
         <div class="highlight">
-          <strong>Privacy First:</strong> TaskMate is built with a privacy-first approach. All features that could potentially impact your privacy are disabled by default and require your explicit opt-in.
+          <strong>Privacy First:</strong> TaskMate is built with a privacy-first approach. All features that could
+          potentially impact your privacy are disabled by default and require your explicit opt-in.
         </div>
       </div>
 
       <div id="children" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          8. Children's Privacy
+          9. Children's Privacy
         </h2>
-        <p>TaskMate is not intended for children under 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe we may have collected information about a child, please contact us immediately.</p>
+        <p>TaskMate is not intended for children under 13. We do not knowingly collect personal information from
+          children. If you are a parent or guardian and believe we may have collected information about a child, please
+          contact us immediately.</p>
       </div>
 
       <div id="changes" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 2v6h-6"></path>
             <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
             <path d="M3 22v-6h6"></path>
             <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
           </svg>
-          9. Changes to Privacy Policy
+          10. Changes to Privacy Policy
         </h2>
-        <p>We may update this policy periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. The latest version will always be available within the app, and significant changes will be notified to you.</p>
+        <p>We may update this policy periodically to reflect changes in our practices or for other operational, legal,
+          or regulatory reasons. The latest version will always be available within the app, and significant changes
+          will be notified to you.</p>
       </div>
 
       <div id="contact" class="section">
         <h2>
-          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          10. Contact Us
+          11. Contact Us
         </h2>
         <p>For any privacy-related questions or concerns, please contact us at:</p>
         <a href="mailto:ck.futuretech@gmail.com" class="contact-button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
@@ -814,7 +1008,8 @@
     </div>
 
     <div class="footer">
-      <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
       <p>&copy; 2025 TaskMate. All rights reserved.</p>
@@ -826,19 +1021,19 @@
     // Theme toggle functionality without using localStorage
     const themeToggle = document.getElementById('theme-toggle');
     const scrollTopButton = document.getElementById('scroll-top');
-    
+
     // Use media query to determine default theme
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const defaultTheme = prefersDarkMode ? 'dark' : 'light';
-    
+
     // Apply the default theme
     document.documentElement.setAttribute('data-theme', defaultTheme);
-    
+
     // Add click event for theme toggle
     themeToggle.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
+
       document.documentElement.setAttribute('data-theme', newTheme);
     });
 
@@ -854,10 +1049,10 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({
@@ -868,4 +1063,5 @@
     });
   </script>
 </body>
+
 </html>
