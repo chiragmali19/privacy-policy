@@ -323,7 +323,7 @@
       color: var(--danger-color);
     }
 
-    .coming-soon {
+    .premium-feature {
       background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.08) 0%, rgba(var(--accent-color-rgb), 0.15) 100%);
       border-left: 4px solid var(--accent-color);
       padding: var(--spacing-lg);
@@ -335,12 +335,12 @@
       transition: var(--transition-default);
     }
 
-    .coming-soon:hover {
+    .premium-feature:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
     }
 
-    .coming-soon:after {
+    .premium-feature:after {
       content: '';
       position: absolute;
       top: -50%;
@@ -353,7 +353,7 @@
       pointer-events: none;
     }
 
-    .coming-soon-badge {
+    .premium-badge {
       display: inline-block;
       background-color: var(--accent-color);
       color: rgba(0, 0, 0, 0.8);
@@ -537,7 +537,7 @@
       }
     }
 
-    .coming-soon-badge {
+    .premium-badge {
       animation: pulse 2s infinite;
     }
 
@@ -632,7 +632,7 @@
 
       .controls,
       .highlight:hover,
-      .coming-soon:hover {
+      .premium-feature:hover {
         display: none;
         transform: none;
         box-shadow: none;
@@ -667,13 +667,13 @@
       </div>
       <h1>Privacy Policy</h1>
       <div class="header-subtitle">Smart TaskMate: Your Privacy-Focused Task Manager</div>
-      <div class="updated-date">Last updated: May 9, 2025</div>
+      <div class="updated-date">Last updated: May 29, 2025</div>
     </div>
 
     <div class="content">
       <p class="introduction">Welcome to TaskMate, an offline-first productivity app designed to protect your personal
         information and provide a secure task management experience. At TaskMate, we believe in transparency and your
-        right to privacy. This policy explains how we handle your data and details all permissions used by the app.</p>
+        right to privacy. This policy explains how we handle your data, our subscription model, advertising practices, and details all permissions used by the app.</p>
 
       <div class="table-of-contents">
         <h3>
@@ -689,17 +689,36 @@
           Contents
         </h3>
         <ul>
-          <li><a href="#storage"><span class="section-number">1</span> Data Storage and Ownership</a></li>
-          <li><a href="#collection"><span class="section-number">2</span> Data Collection and Usage</a></li>
-          <li><a href="#permissions"><span class="section-number">3</span> App Permissions</a></li>
-          <!-- <li><a href="#foreground"><span class="section-number">4</span> Foreground Services</a></li> -->
-          <li><a href="#cloud"><span class="section-number">4</span> Cloud Sync</a></li>
-          <li><a href="#integrations"><span class="section-number">5</span> Third-Party Integrations</a></li>
-          <li><a href="#security"><span class="section-number">6</span> Data Security</a></li>
-          <li><a href="#controls"><span class="section-number">7</span> User Controls</a></li>
-          <li><a href="#children"><span class="section-number">8</span> Children's Privacy</a></li>
-          <li><a href="#changes"><span class="section-number">9</span> Changes to Privacy Policy</a></li>
-          <li><a href="#contact"><span class="section-number">10</span> Contact Us</a></li>
+          <li><a href="#overview"><span class="section-number">1</span> App Overview</a></li>
+          <li><a href="#storage"><span class="section-number">2</span> Data Storage and Ownership</a></li>
+          <li><a href="#collection"><span class="section-number">3</span> Data Collection and Usage</a></li>
+          <li><a href="#permissions"><span class="section-number">4</span> App Permissions</a></li>
+          <li><a href="#subscriptions"><span class="section-number">5</span> Subscriptions and Premium Features</a></li>
+          <li><a href="#cloud"><span class="section-number">6</span> Cloud Sync (Premium)</a></li>
+          <li><a href="#advertising"><span class="section-number">7</span> Advertising</a></li>
+          <li><a href="#integrations"><span class="section-number">8</span> Third-Party Integrations</a></li>
+          <li><a href="#security"><span class="section-number">9</span> Data Security</a></li>
+          <li><a href="#controls"><span class="section-number">10</span> User Controls</a></li>
+          <li><a href="#children"><span class="section-number">11</span> Age Requirements</a></li>
+          <li><a href="#changes"><span class="section-number">12</span> Changes to Privacy Policy</a></li>
+          <li><a href="#contact"><span class="section-number">13</span> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div id="overview" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12,6 12,12 16,14"></polyline>
+          </svg>
+          1. App Overview
+        </h2>
+        <ul>
+          <li><strong>Age Requirement:</strong> TaskMate is designed for users aged 13 and above</li>
+          <li><strong>Free with Premium:</strong> The app offers a free tier with basic features and a premium subscription for enhanced functionality</li>
+          <li><strong>Offline-First:</strong> Core functionality works without internet connection</li>
+          <li><strong>Privacy-Focused:</strong> Built with privacy as a fundamental design principle</li>
         </ul>
       </div>
 
@@ -712,14 +731,15 @@
             <line x1="6" y1="6" x2="6.01" y2="6"></line>
             <line x1="6" y1="18" x2="6.01" y2="18"></line>
           </svg>
-          1. Data Storage and Ownership
+          2. Data Storage and Ownership
         </h2>
         <ul>
-          <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device.</li>
+          <li><strong>Local First:</strong> All your tasks, events, and personal data are stored locally on your device by default</li>
           <li><strong>Complete Control:</strong> You have full control over your data, with options to export, backup,
-            and delete at any time.</li>
+            and delete at any time</li>
           <li><strong>Your Data Belongs to You:</strong> We design our app with the philosophy that your data is yours
-            alone. We don't claim ownership over any content you create.</li>
+            alone. We don't claim ownership over any content you create</li>
+          <li><strong>Premium Cloud Storage:</strong> Premium subscribers can optionally enable secure cloud sync for data backup and multi-device access</li>
         </ul>
       </div>
 
@@ -729,10 +749,10 @@
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
           </svg>
-          2. Data Collection and Usage
+          3. Data Collection and Usage
         </h2>
         <ul>
-          <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app.
+          <li><strong>Minimal Data Collection:</strong> We collect only the data you explicitly create within the app and necessary technical information
           </li>
           <li><strong>Types of Data:</strong>
             <ul>
@@ -740,10 +760,13 @@
               <li>Events and calendar entries</li>
               <li>Categories and task classifications</li>
               <li>App preferences and settings</li>
+              <li>Subscription status and billing information (processed by Google Play/App Store)</li>
+              <li>Device information for advertising (free tier only)</li>
             </ul>
           </li>
           <li><strong>Usage Analytics:</strong> Basic, anonymous usage statistics may be collected to improve the app
-            experience. This can be disabled in settings.</li>
+            experience. This can be disabled in settings</li>
+          <li><strong>Advertising Data:</strong> For free users, we may collect device advertising identifiers and usage patterns to show relevant ads</li>
         </ul>
       </div>
 
@@ -753,7 +776,7 @@
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
-          3. App Permissions
+          4. App Permissions
         </h2>
         <p>TaskMate requires certain permissions to deliver its full functionality. All permissions are requested only
           when needed and can be managed in your device settings at any time.</p>
@@ -766,7 +789,12 @@
           </tr>
           <tr>
             <td><strong>INTERNET</strong></td>
-            <td>Required for cloud sync functionality and receiving remote notifications</td>
+            <td>Required for cloud sync (Premium), ads (Free), and receiving remote notifications</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td><strong>ACCESS_NETWORK_STATE</strong></td>
+            <td>Check network connectivity for cloud sync and ad loading</td>
             <td>Required</td>
           </tr>
           <tr>
@@ -789,33 +817,11 @@
             <td>Required for precise task deadline notifications</td>
             <td>Optional</td>
           </tr>
-          <!-- <tr>
-            <td><strong>USE_EXACT_ALARM</strong></td>
-            <td>Required for time-sensitive notifications</td>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <td><strong>FOREGROUND_SERVICE</strong></td>
-            <td>Allows the app to run reliable task reminder services</td>
-            <td>Optional</td>
-          </tr> -->
           <tr>
             <td><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong></td>
             <td>Ensures notifications work reliably even with battery optimization</td>
             <td>Optional</td>
           </tr>
-          <!-- <tr>
-            <td><strong>ACCESS_NOTIFICATION_POLICY</strong></td>
-            <td>Enables urgent notifications for important tasks</td>
-            <td>Optional</td>
-
-
-          </tr> -->
-          <!-- <tr>
-            <td><strong>WAKE_LOCK</strong></td>
-            <td>Allows the app to keep device awake when processing important notifications</td>
-            <td>Optional</td>
-          </tr> -->
           <tr>
             <td><strong>READ_CALENDAR</strong></td>
             <td>Allows importing events from your device calendar (read-only)</td>
@@ -826,44 +832,52 @@
             <td>Allows creating task-related events in your device calendar</td>
             <td>Optional</td>
           </tr>
+          <tr>
+            <td><strong>AD_ID</strong></td>
+            <td>Used for personalized advertising in the free version</td>
+            <td>Optional (Free users)</td>
+          </tr>
         </table>
 
         <div class="highlight">
           <strong>Important:</strong> Most permissions are optional and can be disabled at any time. Core app
-          functionality works without these permissions, though certain features may be limited.
+          functionality works without these permissions, though certain features may be limited. Premium users can disable advertising-related permissions.
         </div>
       </div>
 
-      <!-- <div id="foreground" class="section">
+      <div id="subscriptions" class="section">
         <h2>
           <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
           </svg>
-          4. Foreground Services
+          5. Subscriptions and Premium Features
         </h2>
-        <p>TaskMate uses foreground services to ensure reliable task reminders and notifications. Here's how and why we
-          use this functionality:</p>
-
-        <ul>
-          <li><strong>Scheduling Time-Sensitive Reminders:</strong> Our app uses foreground services to deliver
-            precisely timed notifications for your important tasks and deadlines.</li>
-          <li><strong>Background Operation:</strong> The foreground service ensures that your scheduled reminders will
-            trigger even when the app is not actively in use.</li>
-          <li><strong>Battery Optimization:</strong> We've designed our foreground service to be as battery-efficient as
-            possible while maintaining reliability.</li>
-        </ul>
-
-        <div class="warning">
-          <strong>User Consent Required:</strong> When you enable notifications in TaskMate, you'll be asked to grant
-          permission for the foreground service. This is required by Android for all apps that need to perform reliable
-          background operations.
+        
+        <div class="premium-feature">
+          <p><strong>TaskMate offers two tiers:</strong></p>
+          <ul>
+            <li><strong>Free Tier:</strong> Basic task management with ads</li>
+            <li><strong>Premium Subscription:</strong> Ad-free experience with advanced features</li>
+          </ul>
         </div>
 
-        <p>We only use foreground services when absolutely necessary for delivering time-sensitive task reminders that
-          you've specifically requested. You can disable this functionality at any time in the app settings.</p>
-      </div> -->
+        <ul>
+          <li><strong>Billing:</strong> All subscription billing is handled securely by Google Play Store or Apple App Store</li>
+          <li><strong>Data Collection:</strong> We only receive subscription status information (active/inactive) from the app stores</li>
+          <li><strong>Payment Information:</strong> We never store or have access to your credit card or payment details</li>
+          <li><strong>Premium Benefits:</strong>
+            <ul>
+              <li>Ad-free experience</li>
+              <li>Cloud sync across devices</li>
+              <li>Advanced task features</li>
+              <li>Priority customer support</li>
+              <li>Enhanced privacy controls</li>
+            </ul>
+          </li>
+          <li><strong>Cancellation:</strong> You can cancel your subscription at any time through your app store account</li>
+        </ul>
+      </div>
 
       <div id="cloud" class="section">
         <h2>
@@ -871,25 +885,67 @@
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
           </svg>
-          4. Cloud Sync <span class="coming-soon-badge">Coming Soon</span>
+          6. Cloud Sync <span class="premium-badge">Premium Only</span>
         </h2>
-        <div class="coming-soon">
-          <p><strong>We're excited to announce that cloud sync is coming soon to TaskMate!</strong></p>
-          <p>When this feature becomes available, you'll be able to:</p>
+        
+        <div class="premium-feature">
+          <p><strong>Cloud sync is available exclusively for Premium subscribers!</strong></p>
+          <p>This feature allows you to:</p>
           <ul>
             <li>Securely sync your tasks across multiple devices</li>
             <li>Back up your data to the cloud</li>
             <li>Access your tasks from anywhere</li>
+            <li>Seamlessly switch between devices</li>
           </ul>
-          <p>All cloud features will be <strong>completely optional</strong> and will follow our strict privacy-first
-            approach.</p>
         </div>
+
         <ul>
-          <li><strong>Authentication:</strong> We'll use secure authentication methods to protect your data</li>
-          <li><strong>Encryption:</strong> All synced data will be encrypted in transit and at rest</li>
-          <li><strong>User Control:</strong> You'll have complete control over what data is synced and when</li>
-          <li><strong>Transparency:</strong> We'll provide clear information about data storage and handling</li>
+          <li><strong>Opt-in Only:</strong> Cloud sync is completely optional and requires explicit activation by Premium users</li>
+          <li><strong>Authentication:</strong> We use secure authentication methods to protect your data</li>
+          <li><strong>Encryption:</strong> All synced data is encrypted in transit and at rest using industry-standard encryption</li>
+          <li><strong>User Control:</strong> You have complete control over what data is synced and when</li>
+          <li><strong>Data Location:</strong> Cloud data is stored on secure servers with enterprise-grade security</li>
+          <li><strong>Deletion:</strong> You can delete all cloud data at any time from the app settings</li>
+          <li><strong>No Ads:</strong> Premium users' cloud data is never used for advertising purposes</li>
         </ul>
+
+        <div class="highlight">
+          <strong>Privacy First:</strong> Even with cloud sync enabled, we maintain our privacy-first approach. Your task data remains private and is never shared with third parties.
+        </div>
+      </div>
+
+      <div id="advertising" class="section">
+        <h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          7. Advertising (Free Users Only)
+        </h2>
+        
+        <p>To support the free version of TaskMate, we display advertisements to non-premium users:</p>
+        
+        <ul>
+          <li><strong>Ad Networks:</strong> We partner with reputable advertising networks (Google AdMob) to display ads</li>
+          <li><strong>Data for Ads:</strong> 
+            <ul>
+              <li>Device advertising identifier (can be reset in device settings)</li>
+              <li>Basic device information (OS version, device type)</li>
+              <li>App usage patterns (anonymized)</li>
+              <li>General location (country/region level only)</li>
+            </ul>
+          </li>
+          <li><strong>Personalized Ads:</strong> Ads may be personalized based on your interests and usage patterns</li>
+          <li><strong>Ad Preferences:</strong> You can control ad personalization through your device's advertising settings</li>
+          <li><strong>Premium Users:</strong> Premium subscribers enjoy a completely ad-free experience with no advertising data collection</li>
+          <li><strong>Opt-out:</strong> You can limit ad tracking through your device settings or upgrade to Premium</li>
+        </ul>
+
+        <div class="warning">
+          <strong>Important:</strong> Task content, personal information, and sensitive data are never shared with advertising networks. Only anonymized usage patterns and device identifiers are used for ad targeting.
+        </div>
       </div>
 
       <div id="integrations" class="section">
@@ -899,16 +955,16 @@
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
           </svg>
-          5. Third-Party Integrations
+          8. Third-Party Integrations
         </h2>
         <ul>
           <li><strong>System Calendar:</strong> Read-only access to your device's calendar (optional)</li>
-          <li><strong>Firebase Services:</strong> We use Firebase for cloud messaging and notifications</li>
-          <li><strong>Future Integrations:</strong> Any future third-party integrations will be clearly documented and
-            optional</li>
-          <li><strong>No Data Selling:</strong> We do not sell your data to any third parties</li>
-          <li><strong>Limited Sharing:</strong> We don't share your information with third parties except when
-            explicitly required to provide requested functionality</li>
+          <li><strong>Firebase Services:</strong> We use Firebase for cloud messaging, notifications, and Premium cloud sync</li>
+          <li><strong>Google Play Services:</strong> For subscription management and some device features</li>
+          <li><strong>Advertising Networks:</strong> Google AdMob for free users (can be disabled with Premium subscription)</li>
+          <li><strong>Analytics:</strong> Anonymous usage analytics to improve app performance (can be opted out)</li>
+          <li><strong>No Data Selling:</strong> We do not sell your personal data to any third parties</li>
+          <li><strong>Limited Sharing:</strong> We don't share your information with third parties except when explicitly required to provide requested functionality</li>
         </ul>
       </div>
 
@@ -919,13 +975,16 @@
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
-          6. Data Security
+          9. Data Security
         </h2>
         <ul>
-         <li><strong>Local Storage:</strong> Shared Preferences for lightweight, persistent data storage</li>
-          <li><strong>Best Practices:</strong> We follow industry best practices for data security</li>
+          <li><strong>Local Storage:</strong> Shared Preferences and encrypted local databases for secure, persistent data storage</li>
+          <li><strong>Cloud Security:</strong> Enterprise-grade encryption for Premium cloud sync</li>
+          <li><strong>Best Practices:</strong> We follow industry best practices for data security and privacy</li>
           <li><strong>Offline First:</strong> No internet connection required for core functionality</li>
           <li><strong>Data Encryption:</strong> Application data is stored with encryption on your device</li>
+          <li><strong>Secure Transmission:</strong> All data transmitted to our servers uses HTTPS encryption</li>
+          <li><strong>Regular Updates:</strong> We regularly update our security measures and protocols</li>
         </ul>
       </div>
 
@@ -938,16 +997,30 @@
               d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
             </path>
           </svg>
-          7. User Controls
+          10. User Controls
         </h2>
         <ul>
           <li><strong>Permission Management:</strong> All permissions can be managed through your device settings</li>
-          <li><strong>In-App Settings:</strong> Detailed controls for notifications, reminders, and background services
-          </li>
+          <li><strong>In-App Settings:</strong> Detailed controls for notifications, reminders, background services, and privacy preferences</li>
           <li><strong>Data Export:</strong> Export and import data at any time in standard formats</li>
-          <li><strong>Data Deletion:</strong> Delete all data with a single tap</li>
+          <li><strong>Local Data Deletion:</strong> Delete all local data with a single tap</li>
+          <li><strong>Complete Data Deletion:</strong> Request deletion of all your data (including cloud data) through our <a href="https://ckfuturetech19.github.io/taskmate-data-delection/" target="_blank" style="color: var(--primary-color); text-decoration: underline;">Data Deletion Request Portal</a></li>
+          <li><strong>In-App Deletion:</strong> Direct data deletion functionality coming in the next app update</li>
+          <li><strong>Cloud Controls:</strong> Premium users can enable/disable cloud sync and delete cloud data independently</li>
+          <li><strong>Ad Controls:</strong> Free users can manage ad preferences through device settings</li>
+          <li><strong>Analytics Opt-out:</strong> Disable usage analytics in app settings</li>
           <li><strong>Granular Control:</strong> Choose what data to backup, share, or delete</li>
+          <li><strong>Subscription Management:</strong> Manage your Premium subscription through your app store account</li>
         </ul>
+
+        <div class="highlight">
+          <p><strong>Data Deletion Options:</strong></p>
+          <ul>
+            <li><strong>Local Data:</strong> Delete app data directly from your device through app settings</li>
+            <li><strong>Complete Deletion:</strong> Request deletion of all data (including cloud data) through our <a href="https://ckfuturetech19.github.io/taskmate-data-delection/" target="_blank" style="color: var(--primary-color); text-decoration: underline;">Data Deletion Request Portal</a></li>
+            <li><strong>Coming Soon:</strong> Direct in-app deletion of all data will be available in the next update</li>
+          </ul>
+        </div>
 
         <div class="highlight">
           <strong>Privacy First:</strong> TaskMate is built with a privacy-first approach. All features that could
@@ -962,11 +1035,19 @@
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          8. Children's Privacy
+          11. Age Requirements
         </h2>
-        <p>TaskMate is not intended for children under 13. We do not knowingly collect personal information from
-          children. If you are a parent or guardian and believe we may have collected information about a child, please
-          contact us immediately.</p>
+        <ul>
+          <li><strong>Minimum Age:</strong> TaskMate is intended for users aged 13 and above</li>
+          <li><strong>Parental Consent:</strong> Users between 13-17 should have parental consent before using the app</li>
+          <li><strong>Data Protection:</strong> We do not knowingly collect personal information from children under 13</li>
+          <li><strong>COPPA Compliance:</strong> We comply with the Children's Online Privacy Protection Act (COPPA)</li>
+          <li><strong>Reporting:</strong> If you are a parent or guardian and believe we may have collected information about a child under 13, please contact us immediately and we will delete such information</li>
+        </ul>
+
+        <div class="warning">
+          <strong>Important:</strong> If you are under 13, please do not use TaskMate or provide any personal information through the app.
+        </div>
       </div>
 
       <div id="changes" class="section">
@@ -978,11 +1059,15 @@
             <path d="M3 22v-6h6"></path>
             <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
           </svg>
-          9. Changes to Privacy Policy
+          12. Changes to Privacy Policy
         </h2>
-        <p>We may update this policy periodically to reflect changes in our practices or for other operational, legal,
-          or regulatory reasons. The latest version will always be available within the app, and significant changes
-          will be notified to you.</p>
+        <ul>
+          <li><strong>Updates:</strong> We may update this policy periodically to reflect changes in our practices, features, or for legal/regulatory reasons</li>
+          <li><strong>Notification:</strong> Significant changes will be notified to you through the app and via email if you have cloud sync enabled</li>
+          <li><strong>Latest Version:</strong> The current version will always be available within the app</li>
+          <li><strong>Continued Use:</strong> Your continued use of the app after policy changes constitutes acceptance of the updated policy</li>
+          <li><strong>Major Changes:</strong> For significant changes affecting your privacy rights, we may require explicit consent</li>
+        </ul>
       </div>
 
       <div id="contact" class="section">
@@ -992,9 +1077,26 @@
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          10. Contact Us
+          13. Contact Us
         </h2>
-        <p>For any privacy-related questions or concerns, please contact us at:</p>
+        <p>For any privacy-related questions, concerns, or requests regarding your data, please contact us at:</p>
+        
+        <div class="highlight">
+          <p><strong>Need to delete your data?</strong></p>
+          <p>You can request complete deletion of all your TaskMate data through our dedicated portal:</p>
+          <a href="https://ckfuturetech19.github.io/taskmate-data-delection/" target="_blank" class="contact-button" style="margin: var(--spacing-md) var(--spacing-sm) var(--spacing-md) 0; display: inline-flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18l-2 13H5L3 6z"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            Data Deletion Request
+          </a>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: var(--spacing-sm);">
+            <strong>Note:</strong> In-app deletion will be available in the next update for even easier data management.
+          </p>
+        </div>
+        
+        <p>For general inquiries and support:</p>
         <a href="mailto:ck.futuretech@gmail.com" class="contact-button">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -1003,6 +1105,18 @@
           </svg>
           ck.futuretech@gmail.com
         </a>
+        
+        <div class="highlight">
+          <p><strong>We're committed to your privacy and will respond to all inquiries within 48 hours.</strong></p>
+          <p>You can contact us regarding:</p>
+          <ul>
+            <li>Data access, correction, or deletion requests</li>
+            <li>Privacy policy questions</li>
+            <li>Subscription and billing inquiries</li>
+            <li>Technical support</li>
+            <li>General feedback</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -1013,6 +1127,7 @@
       </svg>
       <p>&copy; 2025 TaskMate. All rights reserved.</p>
       <p>Made with focus on privacy and productivity</p>
+      <p><strong>Free with Premium • Ages 13+ • Privacy First</strong></p>
     </div>
   </div>
 
